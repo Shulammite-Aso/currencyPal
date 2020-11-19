@@ -1,9 +1,13 @@
-import React from "react";
+import React from 'react';
+import Convert from './convert';
 
-export default function Converter() {
+const App = () => {
     return (
-       <div>
+        <div>
+          
+        <Convert />
+        </div>
+    )
+}
 
-       </div>
-    );
-};
+export default App;
