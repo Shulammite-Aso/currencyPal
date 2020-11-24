@@ -11,6 +11,7 @@ import Select from './Select'
   const [result, setResult] = useState();
   const API_KEY = "ff52dab3b5e37443a177";
 
+  // Make fetch request and set ExchangeRate only when any of the currency selections changes.
  useEffect( () => {
   fetch(`https://free.currconv.com/api/v7/convert?q=${currencyFrom}_${currencyTo}&compact=ultra&apiKey=${API_KEY}`)
   .then(response => response.json())
@@ -22,6 +23,7 @@ import Select from './Select'
 
 );
 
+// When it is only amount or exchangeRate that changed, it should only multply the amount with the current exchange rate
  useEffect( () => {
   setResult(exchangeRate * amount);
  }, [exchangeRate, amount])
