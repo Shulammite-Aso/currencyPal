@@ -1,10 +1,13 @@
 import React from 'react';
-import Convert from './convert';
+//import Box from '@material-ui/core/Box';
+
+import Convert from './Convert';
+import Hero from './Hero';
 
 const App = () => {
     return (
         <div>
-          
+        <Hero />
         <Convert />
         </div>
     )
