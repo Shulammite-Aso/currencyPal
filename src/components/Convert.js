@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-//import Box from '@material-ui/core/Box';
+import Paper from '@material-ui/core/Paper';
 
 import Select from './Select'
 
@@ -9,7 +9,7 @@ import Select from './Select'
   const [exchangeRate, setExchangeRate] = useState()
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState();
-  const API_KEY = "ff52dab3b5e37443a177";
+  const API_KEY = "";
 
   // Make fetch request and set ExchangeRate only when any of the currency selections changes.
  useEffect( () => {
@@ -29,30 +29,38 @@ import Select from './Select'
  }, [exchangeRate, amount])
 
   return (
-    <div>
-      <Select
-        currId={"curFrom"}
-        value={currencyFrom}
-        onChange={(e) => {
-        setCurrencyFrom(e.target.value);
-        } } 
-      />
-      <Select
-        currId={"curTo"}
-        value={currencyTo}
-        onChange={(e) => {
-          setCurrencyTo(e.target.value);
-        } } 
-      />
+    <Paper elevation={0} >
+      <div>
+         <Select
+           currId={"curFrom"}
+           text={"FROM"}
+           value={currencyFrom}
+           onChange={(e) => {
+           setCurrencyFrom(e.target.value);
+           } } 
+         />
+         <Select
+           currId={"curTo"}
+           text={"TO"}
+           value={currencyTo}
+           onChange={(e) => {
+             setCurrencyTo(e.target.value);
+           } } 
+         />
+         <p>{exchangeRate}</p>
+      </div>
 
-      <input type="number" value={amount}
-            onChange={(e) =>{
-                setAmount(e.target.value);
-            } }
-      />
-        <p>{exchangeRate}</p>
-      <h2>{result}</h2>
-    </div>
+      <div>
+      <p><small>AMOUNT</small></p>
+         <input type="number" value={amount}
+               onChange={(e) =>{
+                   setAmount(e.target.value);
+               } }
+         />
+         <h2>{result}</h2>
+      </div>
+      
+    </Paper>
   );
 
 }

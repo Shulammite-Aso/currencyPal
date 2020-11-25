@@ -1,6 +1,8 @@
 const Select = (props) => {
 
     return (
+        <>
+        <p><small>{props.text}</small></p>
         <select id={props.currId} className="postfix"
         value={props.value}
         onChange={props.onChange}
@@ -172,6 +174,7 @@ const Select = (props) => {
         <option value="ZMW">ZMW</option>
         <option value="ZWL">ZWL</option>
         </select>
+        </>
     )
 }
 
