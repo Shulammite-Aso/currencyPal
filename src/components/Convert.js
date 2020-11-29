@@ -44,6 +44,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.9em"
   },
 
+  result: {
+    margin: "2em 6em 0 0",
+    paddingBottom: "0.2em",
+    borderBottom: "3px solid #016a9e65"
+  },
+
   convertBox: {
     width: "18em",
     [theme.breakpoints.up("sm")]: {
@@ -62,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
   const [exchangeRate, setExchangeRate] = useState()
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState();
-  const API_KEY = "";
+  const API_KEY = process.env.API_KEY;
 
   // Make fetch request and set ExchangeRate only when any of the currency selections changes.
  useEffect( () => {
@@ -139,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
                       setAmount(e.target.value);
                   } }
            />
-           <h2>{result}</h2>
+           <h2 className={classes.result}>{result}</h2>
            </div>
        </Grid>
       </Grid>
