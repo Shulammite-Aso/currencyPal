@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   },
   hero: {
     paddingBottom: "7rem",
-    paddingTop: "4em",
+    paddingTop: "8em",
     boxSizing: "inherit",
     backgroundImage: `linear-gradient(to right, rgba(0, 0, 0), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8), rgba(0, 0, 0)),
     url(${Image});`,
@@ -31,6 +31,7 @@ const useStyles = makeStyles({
   }
 });
 
+
 const Hero = () => {
 
   let date = new Date();
@@ -39,16 +40,16 @@ const Hero = () => {
     return (
       <Container className={classes.hero}>
         <Grid container justify="center">
-        <Grid item xs={9} >
-        <Typography className={classes.header} gutterBottom variant="h3" align="center">
-          Welcome to CurrencyPal. Your handy live currency conversion and exchange rate web app.
-        </Typography>
-        </Grid>
+          <Grid item xs={9} >
+            <Typography className={classes.header} gutterBottom variant="h3" align="center">
+              Welcome to CurrencyPal. Your handy live currency conversion and exchange rate web app.
+            </Typography>
+          </Grid>
         </Grid>
         <Typography className={classes.date} align="center" variant="subtitle2">
           {date.toDateString()}
-          </Typography>
-        </Container>
+        </Typography>
+      </Container>
       
     );
     

@@ -1,12 +1,15 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     select: {
         border: "3px solid #016a9e",
         backgroundColor: "#5BADD640",
-        padding: "0.7em"
+        padding: "0.7em",
+        [theme.breakpoints.down("xs")]: {
+            padding: "0.7rem 0.8rem"
+          },
     }
-  });
+  }));
 
 const Select = (props) => {
     const classes = useStyles();

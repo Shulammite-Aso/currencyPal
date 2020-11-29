@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import Grid from "@material-ui/core/Grid";
-import Paper from '@material-ui/core/Paper';
+import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Select from './Select'
 
 const useStyles = makeStyles((theme) => ({
+
   paper: {
-    
     margin: "auto",
     padding: "3rem",
     [theme.breakpoints.down("xs")]: {
@@ -23,21 +23,29 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       width: "67%"
     },
-    //maxWidth: "75%", 
     
   },
   input: {
     border: "3px solid #016a9e",
     backgroundColor: "#5BADD640",
-    padding: "0.7rem"
+    padding: "0.7rem",
+    [theme.breakpoints.down("xs")]: {
+      padding: "0.7rem 2rem"
+    },
   },
+
   secondHeading: {
     fontSize: "1.5rem",
     fontWeight: "bold",
-    marginBottom: "1em"
+    margin: "1em 0 1em 0"
   },
+
+  explainer: {
+    fontSize: "0.9em"
+  },
+
   convertBox: {
-    width: "20em",
+    width: "18em",
     [theme.breakpoints.up("sm")]: {
       width: "13em"
     },
@@ -45,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
       width: "17em"
     },
   }
+
 }));
 
  function Convert() {
@@ -76,23 +85,22 @@ const useStyles = makeStyles((theme) => ({
   return (
     <Paper className={classes.paper} elevation={0} >
       <Grid container spacing={3} >
+
         <Grid item xs={12} sm={4}>
-        
           <div className={classes.convertBox}>
             <Typography className={classes.secondHeading} variant="h2">
               Currency Converter
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography variant="subtitle1" className={classes.explainer}>
               Choose the currency you want to convert from and to, then type in the amount.
             </Typography>
-            </div>  
-        
+          </div>
         </Grid>
 
-         <Grid item xs={12} sm={4}>
-           <div className={classes.convertBox}>
-              <Grid container spacing={4}> 
-               <Grid item xs={6} sm={6}>
+        <Grid item xs={12} sm={4}>
+          <div className={classes.convertBox}>
+            <Grid container spacing={5}> 
+              <Grid item xs={4} sm={6} md={4}>
                   <Select
                     currId={"curFrom"}
                     text={"FROM"}
@@ -101,9 +109,9 @@ const useStyles = makeStyles((theme) => ({
                     setCurrencyFrom(e.target.value);
                     } } 
                  />
-               </Grid>
+              </Grid>
 
-               <Grid item xs={6} sm={6}>
+              <Grid item xs={4} sm={6} md={4}>
                   <Select
                     className={classes.data}
                     currId={"curTo"}
@@ -113,11 +121,11 @@ const useStyles = makeStyles((theme) => ({
                       setCurrencyTo(e.target.value);
                     } } 
                   />
-               </Grid>   
+              </Grid>   
              
-               <Grid item xs={12} > 
-                  <p>{exchangeRate}</p>
-               </Grid>
+              <Grid item xs={12} > 
+                 <p><small>1 {currencyFrom} = {exchangeRate} {currencyTo}</small></p>
+              </Grid>
             </Grid>
           </div>
         </Grid>
