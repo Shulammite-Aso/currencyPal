@@ -1,9 +1,19 @@
-const Select = (props) => {
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles({
+    select: {
+        border: "3px solid #016a9e",
+        backgroundColor: "#5BADD640",
+        padding: "0.7em"
+    }
+  });
+
+const Select = (props) => {
+    const classes = useStyles();
     return (
         <>
         <p><small>{props.text}</small></p>
-        <select id={props.currId} className="postfix"
+        <select id={props.currId} className={classes.select}
         value={props.value}
         onChange={props.onChange}
         >
