@@ -69,11 +69,11 @@ const useStyles = makeStyles((theme) => ({
   const [exchangeRate, setExchangeRate] = useState()
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState();
-  const API_KEY = process.env.API_KEY;
+  const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
 
   // Make fetch request and set ExchangeRate only when any of the currency selections changes.
  useEffect( () => {
-  fetch(`https://free.currconv.com/api/v7/convert?q=${currencyFrom}_${currencyTo}&compact=ultra&apiKey=${API_KEY}`)
+  fetch(`https://free.currconv.com/api/v7/convert?q=${currencyFrom}_${currencyTo}&compact=ultra&apiKey=${REACT_APP_API_KEY}`)
   .then(response => response.json())
   .then(data => {
      var exRate = data[Object.keys(data)[0]];
