@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
 
   paper: {
     margin: "auto",
-    padding: "3rem",
+    padding: "2.4rem",
     [theme.breakpoints.down("xs")]: {
       width: "80%"
     },

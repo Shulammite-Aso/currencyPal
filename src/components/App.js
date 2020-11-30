@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   page: {
     backgroundColor: "black",
     [theme.breakpoints.down("xs")]: {
-      minWidth: "30rem"
+      minWidth: "25rem"
     },
     [theme.breakpoints.up("sm")]: {
       minWidth: "50rem",
