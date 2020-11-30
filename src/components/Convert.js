@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   input: {
     border: "3px solid #016a9e",
+    borderRadius: "2%",
     backgroundColor: "#5BADD640",
     padding: "0.7rem",
     [theme.breakpoints.down("xs")]: {
