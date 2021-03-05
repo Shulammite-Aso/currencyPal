@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
   fetch(`https://free.currconv.com/api/v7/convert?q=${currencyFrom}_${currencyTo}&compact=ultra&apiKey=${REACT_APP_API_KEY}`)
   .then(response => response.json())
   .then(data => {
-     var exRate = data[Object.keys(data)[0]];
+     const exRate = data[Object.keys(data)[0]];
      setExchangeRate(exRate);
   })  
  }, [currencyFrom, currencyTo]

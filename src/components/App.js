@@ -52,7 +52,7 @@ const App = () => {
           </AppBar>
           <Hero />
           <Convert />
-          <footer  className={classes.footer}> <p><small>© 2020. Made with ❤ and Reactjs.</small></p>
+          <footer  className={classes.footer}> <p><small>© 2021. Made with ❤ and Reactjs.</small></p>
           </footer>
         </div>
     </React.Fragment>    
